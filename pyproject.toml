@@ -1,0 +1,53 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "br-core"
+dynamic = ["version"]
+description = "Agentic tools developped by Bot Resources"
+authors = [
+    {name = "Jean-Xavier Raynaud", email = "jxraynaud@gmail.com"},
+]
+readme = "README.md"
+license = {text = "Apache-2.0"}
+requires-python = ">=3.10"
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: Apache Software License",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Topic :: Software Development :: Libraries :: Python Modules",
+]
+dependencies = [
+]
+keywords = ["ai", "llm", "agents"]
+
+[project.urls]
+Homepage = "https://github.com/BotResources/br-core"
+Repository = "https://github.com/BotResources/br-core"
+Issues = "https://github.com/BotResources/br-core/issues"
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=7.0.0",
+    "pytest-asyncio>=0.21.0",
+]
+
+[tool.hatch.version]
+path = "src/br_core/__init__.py"
+
+[tool.hatch.build.targets.sdist]
+include = [
+    "/src",
+    "/tests",
+    "/README.md",
+    "/LICENSE",
+]
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/br_core"]
